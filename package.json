@@ -1,6 +1,9 @@
 {
   "name": "07-curso",
   "version": "1.0.0",
+  "engines": {
+    "node": "v10.15.1", 
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
