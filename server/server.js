@@ -9,11 +9,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(require('./routes/usuario'))
  
-mongoose.connect('mongodb://localhost:27017/cafe', {useNewUrlParser: true} , (err, res)=>{
+mongoose.connect(process.env.urlDB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true} , (err, res)=>{
   
   if (err) throw err
   
-  console.log('connectado');
+  console.log('connectado online');
 }); 
 
 app.listen(process.env.PORT,()=>{
