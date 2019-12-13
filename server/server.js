@@ -13,7 +13,7 @@ mongoose.connect(process.env.urlDB, {useNewUrlParser: true, useUnifiedTopology: 
   
   if (err) throw err
   
-  console.log('connectado');
+  console.log('connectado online');
 }); 
 
 app.listen(process.env.PORT,()=>{
