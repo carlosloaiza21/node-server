@@ -37,9 +37,17 @@ app.post('/usuario', (req, res) => {
 
 app.put('/usuario/:id', (req, res) => {
   let id= req.params.id;
-  res.json({
-    id
-  });
+  let body = req.body;
+  Usuario.findByIdAndUpdate(id,body,{new:true, runValidators: true},(err,user)=>{
+    if (err) {
+      return res.json({
+        err
+      })
+    }
+    return res.json({
+      user
+    })
+  })
 });
 
 app.delete('/usuario', (req, res) => {
